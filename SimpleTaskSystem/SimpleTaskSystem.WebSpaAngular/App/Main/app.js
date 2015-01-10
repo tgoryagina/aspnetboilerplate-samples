@@ -18,13 +18,21 @@
         function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider
-                .state('tasklist', {
+                .state('login', {
                     url: '/',
+                    templateUrl: '/App/Main/views/login/login.cshtml'
+                })
+                .state('register', {
+                    url: '/register',
+                    templateUrl: '/App/Main/views/login/register.cshtml'
+                })
+                .state('tasklist', {
+                    url: '/tasklist',
                     templateUrl: '/App/Main/views/task/list.cshtml',
                     menu: 'TaskList' //Matches to name of 'TaskList' menu in SimpleTaskSystemNavigationProvider
                 })
                 .state('newtask', {
-                    url: '/new',
+                    url: '/newtask',
                     templateUrl: '/App/Main/views/task/new.cshtml',
                     menu: 'NewTask' //Matches to name of 'NewTask' menu in SimpleTaskSystemNavigationProvider
                 });
